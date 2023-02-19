@@ -1,10 +1,11 @@
 const express = require("express");
 const router = express.Router();
 const User = require("../models/User");
+require("dotenv").config();
 const { body, validationResult } = require("express-validator");
 const jwt = require("jsonwebtoken");
 const bcrypt = require("bcryptjs");
-const jwtSecret = "!@MynameisEndtoendtubeYouChannells$#";
+const secret = process.env.jwtSecret;
 
 router.post(
 	"/createuser",
@@ -76,7 +77,7 @@ router.post(
 				},
 			};
 
-			const authToken = jwt.sign(data, jwtSecret);
+			const authToken = jwt.sign(data, secret);
 
 			return res.json({ success: true, authToken: authToken });
 		} catch (err) {
