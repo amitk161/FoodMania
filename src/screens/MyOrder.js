@@ -59,7 +59,7 @@ export default function MyOrder() {
 																	<div
 																		className="card mt-3"
 																		style={{
-																			width: "16rem",
+																			width: "19rem",
 																			maxHeight: "360px",
 																		}}
 																	>
