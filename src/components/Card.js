@@ -39,7 +39,7 @@ export default function Card(props) {
 					price: finalPrice,
 					qty: qty,
 					size: size,
-					img: props.ImgSrc,
+					img: props.foodItem.img,
 				});
 				console.log("Size different so simply ADD one more to the list");
 				return;
@@ -51,10 +51,13 @@ export default function Card(props) {
 			type: "ADD",
 			id: props.foodItem._id,
 			name: props.foodItem.name,
+			img: props.foodItem.img,
 			price: finalPrice,
 			qty: qty,
 			size: size,
 		});
+
+		console.log("Image", props.foodItem.img);
 	};
 
 	const finalPrice = qty * parseInt(options[size]);

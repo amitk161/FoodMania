@@ -16,6 +16,7 @@ const reducer = (state, action) => {
 					price: action.price,
 					img: action.img,
 				},
+				//console.log("Hello", action.img),
 			];
 		case "REMOVE":
 			let newArr = [...state];
