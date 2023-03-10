@@ -7,4 +7,4 @@ items listed on the website and add it to their cart. Upon adding it is displaye
 The user can login using email id and password. The application is developed using React JS Framework for 
 frontend and Node JS and Express JS and MongoDB Atlas for backend.
 
-Along with this the passwords are stored securely using JWT and Bcrypt.
+Along with this the passwords are stored securely using JWT and Bcrypt JS.
