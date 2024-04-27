@@ -8,8 +8,10 @@ export default function Home() {
 	const [foodCat, setFoodCat] = useState([]);
 	const [foodItem, setFoodItem] = useState([]);
 	const [search, setSearch] = useState("");
+	const [loading, setLoading] = useState(true);
 
 	const loadData = async () => {
+		setLoading(true);
 		let response = await fetch(`${BASE_URL}/api/foodData`, {
 			method: "GET",
 			headers: {
@@ -20,11 +22,26 @@ export default function Home() {
 		response = await response.json();
 		setFoodItem(response[0]);
 		setFoodCat(response[1]);
+		setLoading(false);
 	};
 
 	useEffect(() => {
 		loadData();
 	}, []);
+
+	if (loading) {
+	    return (
+	      <div>
+	        <Navbar />
+	        <div className="text-center mt-5">
+	          <div class="spinner-border" role="status">
+	            <span class="visually-hidden">Loading...</span>
+	          </div>
+	        </div>
+	        <Footer />
+	      </div>
+	    );
+  	}
 
 	return (
 		<div>
