@@ -6,18 +6,13 @@ const frontURL = process.env.FRONT_URL;
 const mongoDB = require("./db");
 mongoDB();
 
-app.use((req, res, next) => {
-	res.setHeader(
-		"Access-Control-Allow-Origin",
-		"https://food-mania-frontend.vercel.app/"
-	);
-	res.header(
-		"Access-Control-Allow-Headers",
-		"Origin, X-Requested-With, Content-Type, Accept"
-	);
-	next();
-});
-app.use(express.json());
+app.use(cors(
+	{
+        origin: "https://food-mania-frontend.vercel.app/",
+        methods: ["POST", "GET"],
+        credentials: true,
+    }
+))
 
 app.use("/api", require("./Routes/CreateUser"));
 app.use("/api", require("./Routes/DisplayData"));
