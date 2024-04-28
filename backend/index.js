@@ -9,7 +9,7 @@ mongoDB();
 app.use((req, res, next) => {
 	res.setHeader(
 		"Access-Control-Allow-Origin",
-		"https://foodmaniafullstack.netlify.app"
+		"https://food-mania-frontend.vercel.app/"
 	);
 	res.header(
 		"Access-Control-Allow-Headers",
