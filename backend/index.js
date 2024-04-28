@@ -9,7 +9,7 @@ mongoDB();
 
 app.use(cors(
 	{
-        origin: ["https://food-mania-frontend.vercel.app/"],
+        origin: ["https://food-mania-frontend.vercel.app"],
         methods: ["POST", "GET"],
         credentials: true,
     }
